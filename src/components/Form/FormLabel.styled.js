@@ -1,13 +1,22 @@
 import { styled } from "styled-components";
 
-export const FilterStyle = styled.div`
+export const FormLabel = styled.div`
     display: flex;
+    gap: 20px;
+    width: 100%;
     justify-content: center;
 
-    .filter__input{
+    .form__label{
+        display: flex;
+        flex-direction: column;
         width: 100%;
-        max-width: 290px;
-        padding: 0 10px;
+        max-width: 300px;
+        color: #f3f0f0;
+        font-size: 10px;
+        font-family: Georgia, 'Times New Roman', Times, serif;
+    }
+
+    .form__input{
         border: none;
         outline: none;
         margin-top: 5px;
@@ -19,11 +28,5 @@ export const FilterStyle = styled.div`
         padding: 0 10px;
         font-size: 15px;
         font-family: Georgia, 'Times New Roman', Times, serif;
-
-        &::placeholder{
-            color: #f3f0f0;
-            font-size: 10px;
-            font-family: Georgia, 'Times New Roman', Times, serif;
-        }
     }
 `

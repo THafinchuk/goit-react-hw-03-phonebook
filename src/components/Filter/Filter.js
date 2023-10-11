@@ -1,15 +1,21 @@
-import { Label, StyledInput } from './Filter.styled';
+import PropTypes from 'prop-types';
+import { FilterStyle } from './Filter.styled';
 
-export const Filter = ({ value, onChange }) => {
+export const Filter = ({ onFilter, filter }) => {
   return (
-    <Label>
-      Find contacts by name
-      <StyledInput
+    <FilterStyle>
+      <input
+        className="filter__input"
+        placeholder="Name or number"
         type="text"
-        name="filter"
-        value={value}
-        onChange={onChange}
+        onChange={onFilter}
+        value={filter}
       />
-    </Label>
+    </FilterStyle>
   );
+};
+
+Filter.propTypes = {
+  filter: PropTypes.string.isRequired,
+  onFilter: PropTypes.func.isRequired,
 };
