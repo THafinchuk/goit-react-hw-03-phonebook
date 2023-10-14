@@ -37,14 +37,6 @@ export class Form extends Component {
     this.reset();
   };
 
-  addedContact = newContact => {
-    return this.props.contacts.some(
-      contact =>
-        contact.name.toLowerCase().trim() ===
-          newContact.name.toLowerCase().trim() ||
-        contact.number === newContact.number
-    );
-  };
 
   reset = () => {
     this.setState({ name: '', number: '' });
@@ -60,7 +52,6 @@ export class Form extends Component {
               className="form__input"
               type="text"
               name="name"
-              // pattern="^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$"
               title="Name may contain only letters, apostrophe, dash and spaces. For example Adrian, Jacob Mercer, Charles de Batz de Castelmore d'Artagnan"
               value={this.state.name}
               onChange={this.handleChange}
@@ -73,7 +64,6 @@ export class Form extends Component {
               className="form__input"
               type="tel"
               name="number"
-              // pattern="\+?\d{1,4}?[-.\s]?\(?\d{1,3}?\)?[-.\s]?\d{1,4}[-.\s]?\d{1,4}[-.\s]?\d{1,9}"
               title="Phone number must be digits and can contain spaces, dashes, parentheses and can start with +"
               value={this.state.number}
               onChange={this.handleChange}
